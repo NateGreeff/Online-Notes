@@ -40,7 +40,7 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  });
+  }, console.log(`Saving note:\n${note.title}\n${note.text}`));
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -48,7 +48,7 @@ const deleteNote = (id) =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  }, console.log(`Deleting note with id ${id}`));
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
